@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>Joakim Nilsson</title>
   <link rel="stylesheet" href="style.css">
@@ -12,65 +11,48 @@
   <div class="sidebar">
     <img src="images/JN.jpg" />
     <h3>Joakim Nilsson</h3>
-    <div class="links">
-      <table id ='social-links'>
-        <tr >
-          <td id = 'linkedin'>
-            <a href="https://linkedin.com/in/joakim-nilsson42"> <img src="images/linkedin.png"> </a>
-          </td>
-          <td id ='email'>
-            <a href="mailto:jpa.nilsson@outlook.com"><img src="images/email.png"></a>
-          </td>
-          <td id ='phone'>
-            <a href="tel:+46704062404"><img src="images/phone.jpeg"></a>
-          </td>
-
-
-        </tr>
-
-
-
-
-
-
-      </table>
+            <a href="https://linkedin.com/in/joakim-nilsson42">Linkedin</a>
+            <a href="mailto:jpa.nilsson@outlook.com">E-Mail</a>
+            <a href="tel:+46704062404">Phone</a>
 
     </div>
 
-  </div>
 
   <div class=main-column>
 
     <div class="wrapper">
       <section>
         <h1>Curriculum Vitae:</h1>
-        <h2>Education:</h2>
+
+	<div class="tab">
+  	<button class="tablinks" onclick="opentab(event, 'WE')" id ="DO">Work and Education</button>
+	<button class="tablinks" onclick="opentab(event, 'U')">University</button>
+  	<button class="tablinks" onclick="opentab(event, 'C')">Chess</button>
+	</div>
+	<div id="WE" class="tabcontent">
+  	<h2>Work and Education</h2>
+        <h3>Education:</h3>
         <ul>
           <li>Bachelor's programme in Mathematics,
             Uppsala University (September 2019-) </li>
         </ul>
 
-        <h2>Work-experience</h2>
+        <h3>Work</h3>
         <ul>
-          <li>Care-worker at Frösunda Omsorg (2018-)</li>
+          <li>Care-worker at Frösunda Omsorg (2018-2021)</li>
           <li>Chess instructor at Uppsala Skolschacksällskap (2020-)</li>
+	  <li> Teaching Assistant at Department of Mathematics, Uppsala University (2022-)</li>
         </ul>
-        <h2>Technical skills </h2>
+        <h3>Technical skills </h3>
         <ul>
           <li>Python </li>
           <li>R </li>
           <li>MS Office (particularly Excel) </li>
         </ul>
-        <h2>Other</h2>
-        <ul>
-          <li> Technician (digital chessboards)</li>
-          Uppsala Chess Festival and Uppsala Young Champions (2020-)
-          <li>Rating accountant Uppsala Skolschacksällskap (2015-2016) </li>
-          <li>Completed FIDE arbiter seminar (Aug 2021) </li>
-          <li>Internal training-session in chess-broadcasting (annually) </li>
-          Uppsala Skolschacksällskap (2019-)
-        </ul>
-        <h2>Selected Positions of Trust</h2>
+	</div>
+
+	<div id="U" class="tabcontent">
+  	<h3>University</h3>
         <ul>
           <li>Deputy student representative in Bachelors programme in mathematics board</li>
           Uppsala University (2020-2021)
@@ -82,17 +64,55 @@
           Uppsala University (2021-2022)
           <li>Student representative in the group for equal opportunity</li>
           Department of mathematics, Uppsala University (2021-2022)
-          <li>Board member </li>
-          Uppsala Skolschacksällskap (2021-)
-          <li>Board member</li>
-          Upplands Schackförbund (2021-)
           <li>Student representative in Masters programme in mathematics board </li>
           Uppsala University (2022-2023)
           <li>Chairman of the student council for mathematics students</li>
           Uppsala University (2022-2023)
         </ul>
+	</div>
+
+	<div id="C" class="tabcontent">
+  	<h2>Chess</h2>
+        <ul>
+          <li> Technician (digital chessboards)</li>
+          Uppsala Chess Festival and Uppsala Young Champions (2020-)
+          <li>Rating accountant Uppsala Skolschacksällskap (2015-2016) </li>
+          <li>Completed FIDE arbiter seminar (Aug 2021) </li>
+          <li>Internal training-session in chess-broadcasting (annually) </li>
+          Uppsala Skolschacksällskap (2019-)
+        </ul>
+        <h3>Selected Positions of Trust</h3>
+        <ul>
+          <li>Board member </li>
+          Uppsala Skolschacksällskap (2021-)
+          <li>Board member</li>
+          Upplands Schackförbund (2021-)
+        </ul>
+	</div>
+	
+<script>
+function opentab(evt, cityName) {
+  var i, tabcontent, tablinks;
+
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+document.getElementById('DO').click();
+</script>
       </section>
     </div>
 </body>
 
 </html>
+
+
